@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeScreenActivity"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="@color/textLogin"
+            tools:text="The question will be asked here"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="0dp"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="5"
+                android:indeterminate="false"
+                android:minHeight="50dp"
+                android:progress="0"
+
+                />
+
+            <TextView
+                android:id="@+id/textProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="15dp"
+                android:textSize="14sp"
+                tools:text="0/5"/>
+
+
+
+        </LinearLayout>
+        
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioGroupAll"
+            >
+
+
+            <RadioButton
+                android:id="@+id/rbOptionOne"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="First question"
+                android:textSize="18sp"/>
+
+            <RadioButton
+                android:id="@+id/rbOptionTwo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="First question"
+                android:textSize="18sp"
+                />
+
+            <RadioButton
+                android:id="@+id/rbOptionThree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="First question"
+                android:textSize="18sp"/>
+
+            <RadioButton
+                android:id="@+id/rbOptionFour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="First question"
+                android:textSize="18sp"/>
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/textAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your asnswer : "
+            android:textSize="20sp"/>
+
+        <Button
+            android:id="@+id/submitBtn"
+            android:layout_marginTop="36dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit"/>
+
+
+
+    </LinearLayout>
+
+</ScrollView>
