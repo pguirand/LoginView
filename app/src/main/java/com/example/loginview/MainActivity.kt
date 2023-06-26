@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         loginBtn.setOnClickListener {
             if (userText.text.isNotEmpty() && (userPass.text.isNotEmpty())) {
                 val intent = Intent(this, HomeScreenActivity::class.java)
+                    .putExtra("email", userText.text.toString())
                 startActivity(intent)
                 finish()
 

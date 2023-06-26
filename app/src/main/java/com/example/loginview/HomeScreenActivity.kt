@@ -8,6 +8,7 @@ import android.widget.ProgressBar
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.TextView
+import java.util.Locale
 
 class HomeScreenActivity : AppCompatActivity() {
 
@@ -15,7 +16,7 @@ class HomeScreenActivity : AppCompatActivity() {
     private var gQuestionList:ArrayList<Question>?=null
     private var gSelectedOptionPos : Int = 0
 
-
+    private var textWlc : TextView? = null
     private var progressBar: ProgressBar? = null
     private var textProgress : TextView? = null
     private var textQuestion : TextView? = null
@@ -32,6 +33,7 @@ class HomeScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_screen)
 
+        textWlc = findViewById(R.id.textWlc)
         progressBar = findViewById(R.id.progressBar)
         textProgress = findViewById(R.id.textProgress)
         textQuestion = findViewById(R.id.textQuestion)
@@ -42,11 +44,15 @@ class HomeScreenActivity : AppCompatActivity() {
         radioButton4 = findViewById(R.id.rbOptionFour)
         submitBtn = findViewById(R.id.submitBtn)
 
+        val userName = intent.getStringExtra("email")
+        textWlc?.text = "Welcome, ${userName?.replaceFirstChar { char -> char.uppercaseChar() }}"
+
         gQuestionList = Constants.getQuestions()
 
         setQuestion()
 
         submitBtn?.setOnClickListener {
+
             gCurrentPos++
             when {
                 gCurrentPos <= gQuestionList!!.size -> setQuestion()
